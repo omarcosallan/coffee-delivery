@@ -30,6 +30,9 @@ export function Success() {
     return null
   }
 
+  const selectedPaymentMethod =
+    paymentMethods[state.paymentMethod as keyof typeof paymentMethods]
+
   return (
     <SuccessContainer>
       <strong>Uhu! Pedido confirmado</strong>
@@ -69,7 +72,7 @@ export function Success() {
             <p>
               Pagamento na entrega
               <br />
-              <strong>{paymentMethods[state.paymentMethod]}</strong>
+              <strong>{selectedPaymentMethod}</strong>
             </p>
           </div>
         </InfoOrder>
